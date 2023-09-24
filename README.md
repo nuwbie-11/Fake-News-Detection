@@ -39,7 +39,7 @@ An App to classify whether the News is actually Real or Fraud by using its artic
         
     return tempText
   ```
-- With block of code above, we should be able to preprocess each text on dataset
+- With Block of Code above, we should be able to preprocess each text on dataset
 - for the classifier. This time i use two different classifiers which are Linear Regression and Decision Tree. Both Classifiers resulting good performance
 - Saving the model with pickle
   ```python
