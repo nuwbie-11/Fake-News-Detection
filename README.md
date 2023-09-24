@@ -66,7 +66,7 @@ An App to classify whether the News is actually Real or Fraud by using its artic
     
     return (model,vector)
   ```
-  Code of block above will handle the path of both model and vectorizer and load them
+  Block of code above will handle the path of both model and vectorizer and load them
 - Preprocess the Input. Coz why not?
   ```python
   def preProcess(text):
