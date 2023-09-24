@@ -12,44 +12,32 @@ export default function Home() {
     const formData = new FormData(event.currentTarget)
     
     fetch(
-      "http://localhost:8080/testPredict",{
+      "http://localhost:8080/predictNews",{
         method:"POST",
         body:formData
       }
     ).then((response) => response.json()).then((data) => {
       setData(data)
     })
-    
-    // const response = await fetch(
-    //   "http://localhost:8080/testPredict",{
-    //     method:"POST",
-    //     body:formData
-    //   }
-    // )
-    // const data = await response.json()
+  
   }
 
-  // React.useEffect(()=>{
-  //   fetch("http://localhost:8080/testPredict")
-  //     .then((res)=> res.json())
-  //     .then((data)=> {
-  //       setData(data)
-  //     })
-  // },[])
   
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>
-        <form onSubmit={predictNews} method="post">
-          <input type="text" name="article" id="" />
+    <main className="flex flex-col items-center justify-between pt-12">
+      <div className="form-wrapper">
+        <form onSubmit={predictNews} method="post" className='flex flex-col gap-y-5'>
+          <textarea name="article" id="" 
+          className='sm:min-h-[24rem] sm:min-w-[35rem] px-2 py-3 rounded border border-black/[0.3rem] shadow shadow-black/[0.03]' 
+          placeholder='Input Your News Article Here'/>
 
-          <button type="submit">Submit</button>
+          <button type="submit" className='btn-rose py-2'>Submit</button>
 
         </form>
 
         
           {
-            data ? (<p>{data["message"]}</p>) : ( <p>Loading</p> )
+            data ? (<p>{data["message"]}</p>) : ( null )
           }
 
       </div>

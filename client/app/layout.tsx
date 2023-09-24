@@ -17,6 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` bg-zinc-50 text-zinc-950 ${inter.className}`}>
+        <div className="text-center mt-8">
+          <h1 className="font-semibold text-lg">FAKE NEWS DETECTION</h1>
+        </div>
         {children}
       </body>
     </html>
