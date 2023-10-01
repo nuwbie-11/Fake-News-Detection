@@ -1,10 +1,19 @@
 "use client"
 
-import React, { FormEvent } from 'react'
+import React, { FormEvent, useEffect } from 'react'
 
 export default function Home() {
   const [data,setData] = React.useState<{message:string} | null>(null)
 
+
+  function testFetch(){
+    fetch(
+      "https://nuwbie11.pythonanywhere.com/test",{
+      }
+    ).then((response) => response.json()).then((data) => {
+      setData(data)
+    })
+  }
 
   function predictNews(event:FormEvent<HTMLFormElement>){
     event.preventDefault()
@@ -12,7 +21,7 @@ export default function Home() {
     const formData = new FormData(event.currentTarget)
     
     fetch(
-      "http://localhost:8080/predictNews",{
+      "https://nuwbie11.pythonanywhere.com/predictNews",{
         method:"POST",
         body:formData
       }
@@ -21,6 +30,10 @@ export default function Home() {
     })
   
   }
+
+  useEffect(()=>{
+    testFetch()
+  },[])
 
   
   return (
