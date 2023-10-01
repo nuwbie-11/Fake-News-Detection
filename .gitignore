@@ -3,5 +3,3 @@
 .gitignore
 
 /server/model
-
-vercel.json
