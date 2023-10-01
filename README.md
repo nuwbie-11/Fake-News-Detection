@@ -2,8 +2,8 @@
 
 An App to classify whether the News is actually Real or Fraud by using its article
 
-> [!NOTE]  
-> There is no deployment Since I'm brokie and Vercel only accept file less than 250 mb.
+> [!NOTE] 
+> Deployed at [fake-news-detection-beta.vercel.app/](https://fake-news-detection-beta.vercel.app/)
 
 
 ## About Model
